@@ -1,0 +1,26 @@
+{
+  "name": "cubster",
+  "version": "1.0.0",
+  "description": "codecub practice",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/funduval/cubster.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/funduval/cubster/issues"
+  },
+  "homepage": "https://github.com/funduval/cubster#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "method-override": "^2.3.9",
+    "mysql": "^2.14.0"
+  }
+}
