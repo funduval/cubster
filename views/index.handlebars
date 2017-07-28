@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Code Cubs</title>
+  
+</head>
+
+<body>
+<!-- map and results -->
+  <div id="wrapper">
+
+    <div class="row">
+      <div class="col s12">
+
+        </div>
+ 
+      </div>
+    </div>
+
+
+<div id="made">
+<h4>Build the Tech Stack Your Organization Needs: <i class="material-icons large">arrow_forward</i></h4>
+
+
+<ul class= "left" style="list-style:none">
+
+{{#each cubs}}
+
+{{#unless this.skilled}}
+
+<li>
+
+{{this.techName}}<br>
+<img class="logos" src={{this.imgUrl}}><br>
+<form action = 'cubs/update/{{this.id}}?_method=PUT' method="POST"><input type="hidden" name="skilled" value="true">
+<button class = "addIt" type="submit">Add to Stack</button>
+</form>
+</li>
+{{/unless}}
+{{/each}}
+</ul>
+</div>
+
+<div id = "image">
+<img src="/assets/img/codecubs.png" alt="cub" id="cubLogo">
+</div>
+<div id = "skilled">
+<h4>Cub Candidate Must Work With:</h4>
+
+<ul class = "right" style="list-style:none">
+
+{{#each cubs}}
+
+{{#if this.skilled}}
+
+<li>
+{{this.techName}}<br>
+
+<img class="logos" src={{this.imgUrl}}><br>
+
+<form action="cubs/update/{{this.id}}?_method=PUT" method="POST">
+<input type="hidden" name="skilled" value="false">
+<button type="submit" class="removeIt">Remove from Stack</button>
+</form>
+
+</li>
+{{/if}}
+{{/each}}
+</ul>
+</div>
+<div id="find">
+ 
+      </div> 
+  </div>
+
+  
+  <button class="btn waves-effect waves-light" type="submit" name="action" id="findIt">Submit Stack
+  </button>
+
+      <a class="btn modal-trigger waves-effect waves-light" href="#modal5" id="trigger">Find </a></button>
+
+        <div id="modal5" class="modal bottom-sheet">
+          <div class="modal-content">
+ <img src="/assets/img/codecubs.png" alt="cub" id="cubLogo">
+ <ul class="collection">
+ {{#each adam}}
+  <li class="collection-item avatar" style="height:160px">
+          <img class="circle" id = "profile" src={{photo}} style="height:130px; width:130px">
+      <span class="title">Cub Candidate in {{location}}</span>
+      <p><br>{{name}}<br>
+         {{email}}
+      </p>
+      <a href={{glink}}class="secondary-content">Github Profile</a>
+ </li>
+ {{/each}}
+           </ul>
+          </div>
+               <div class="modal-footer">
+      <a href="#modal5" class="modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+    </div>
+
+        </div>
+              <script>
+              $(document).ready(function(){
+   $('#modal5').modal();
+   });
+     
+      </script>
+  
+  
+
+</body>
+</html> 

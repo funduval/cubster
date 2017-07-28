@@ -1,0 +1,165 @@
+body{
+
+	background-color: #CFEBEA;
+/*background-color: white;
+*/	text-align: center;
+	font-family: sans-serif;
+	
+	position: relative;
+
+}
+
+li{
+
+	width:100px;
+	display:block;
+}
+
+button {
+	background-color: white;
+	color: black;
+	width:60px;
+	padding:2px;
+}
+
+.addIt{
+width:60px;
+font-size: 8px;
+line-height: 10px;
+}
+
+.removeIt{
+width:60px;
+font-size: 8px;
+line-height: 10px;
+
+
+}
+
+.createIt{
+
+}
+
+.logos{
+width:60px;
+
+}
+#cubName{
+display: inline;
+float: left;
+
+}
+
+
+
+h1 {
+
+	line-height: 30px;
+	padding:4px;
+	background-color: #389096;
+	color:white;
+}
+
+#trigger{
+	background-color: transparent;
+
+	color:black;
+	width: 130px;
+	height: 130px;
+	border-radius: 10px;
+	font-size: 16px;
+	background-image: url("../img/cubFind.png");
+	background-repeat:no-repeat;
+	background-position: center;
+	text-align:center;
+	padding-top:84px;
+	position:absolute;
+	top:580px;
+	left:535px;
+	z-index: 2;
+}
+
+
+h2{
+
+
+	color: black;
+	background-color: white;
+}
+
+.right{
+	margin-right: 120px;
+}
+
+.left{
+	margin-left: 80px;
+}
+
+#made {
+	display: inline;
+	float: left;
+	margin-left: 2%;
+	width:400px;
+
+}
+
+
+#skilled {
+	width:400px;
+	display: inline;
+	float: right;
+	
+}
+
+
+.logos{
+	width:60px;
+}
+
+#find {
+	position: absolute;
+	bottom: -480px;
+	left: 20%;
+
+
+}
+
+#findIt{
+	position:absolute;
+	width: 150px;
+	height:80px;
+	top:480px;
+	left:520px;
+	text-align: justify;
+	padding:4px;
+	font-size: 18px;
+	
+}
+
+li{
+
+	width:600px;
+}
+
+.profile{
+
+	display: inline;
+	float:left;
+}
+
+#techName{
+	
+	margin:auto;er
+	line-height:30px;
+	font-size:20px;
+	width:100px;
+	
+
+}
+
+#cubLogo {
+	width:300px;
+	display:inline;
+	float:left;
+	margin-left: 1%;
+}
