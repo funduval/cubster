@@ -1,132 +1,117 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  
-  <title>Code Cubs</title>
-  
-</head>
-
-<body>
-<!-- map and results -->
-  <div id="wrapper">
-
-    <div class="row">
-      <div class="col s12">
-
-        </div>
- 
+   <head>
+      <meta charset="UTF-8">
+      <title>Code Cubs</title>
+      <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script> 
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+         
+   </head>
+   <body>
+      <!-- map and results -->
+      <div id="wrapper">
+         <div class="row">
+            <div class="col s12">
+            </div>
+         </div>
       </div>
-    </div>
-
-
-<div id="made">
-<h4>Build the Tech Stack Your Organization Needs:</h4> 
-
-<i class="material-icons large" id="arrow">arrow_forward</i>
-
-<ul class= "left" style="list-style:none">
-
-{{#each cubs}}
-
-{{#unless this.skilled}}
-
-<li class="forLogos">
-
-{{this.techName}}<br>
-<img class="logos" src={{this.imgUrl}}><br>
-<form action = 'cubs/update/{{this.id}}?_method=PUT' method="POST"><input type="hidden" name="skilled" value="true">
-<button class = "addIt" type="submit">Add</button>
-</form>
-</li>
-{{/unless}}
-{{/each}}
-</ul>
-</div>
-
-<div id = "image">
-<img src="/assets/img/codecubs.png" alt="cub" id="cubLogo">
-</div>
-<div id = "skilled">
-<h4>The Candidate I Seek Must Know:</h4>
-
-<ul class = "right" style="list-style:none">
-
-{{#each cubs}}
-
-{{#if this.skilled}}
-
-<li class="forLogos">
-{{this.techName}}<br>
-
-<img class="logos" src={{this.imgUrl}}><br>
-
-<form action="cubs/update/{{this.id}}?_method=PUT" method="POST">
-<input type="hidden" name="skilled" value="false">
-<button type="submit" class="removeIt">Remove</button>
-</form>
-
-</li>
-{{/if}}
-{{/each}}
-</ul>
-</div>
-<div id="find">
- 
-      </div> 
-  </div>
-
-  
-  <button class="btn waves-effect waves-light" type="submit" name="action" id="findIt">Submit Stack
-  </button>
-
+      <div id="made">
+         <h4>Build the Tech Stack Your Organization Needs:</h4>
+         <i class="material-icons large" id="arrow">arrow_forward</i>
+         <ul class= "left" style="list-style:none">
+            {{#each cubs}}
+            {{#unless this.skilled}}
+            <li class="forLogos">
+               {{this.techName}}<br>
+               <img class="logos" src={{this.imgUrl}}><br>
+               <form action = 'cubs/update/{{this.id}}?_method=PUT' method="POST"><input type="hidden" name="skilled" value="true">
+                  <button class = "addIt" type="submit">Add</button>
+               </form>
+            </li>
+            {{/unless}}
+            {{/each}}
+         </ul>
+      </div>
+      <div id = "image">
+         <img src="/assets/img/codecubs.png" alt="cub" id="cubLogo">
+      </div>
+      <div id = "skilled">
+         <h4>The Candidate I Seek Must Know:</h4>
+         <ul class = "right skilledList" style="list-style:none">
+            {{#each cubs}}
+            {{#if this.skilled}}
+            <li data-tech={{this.techName}} class="forLogos">
+               {{this.techName}}<br>
+               <img class="logos" src={{this.imgUrl}}><br>
+               <form action="cubs/update/{{this.id}}?_method=PUT" method="POST">
+                  <input type="hidden" name="skilled" value="false">
+                  <button type="submit" class="removeIt">Remove</button>
+               </form>
+            </li>
+            {{/if}}
+            {{/each}}
+         </ul>
+      </div>
+      <div id="find">
+      </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action" id="findIt">Submit Stack
+      </button>
       <a class="btn modal-trigger waves-effect waves-light" href="#modal5" id="trigger">Find </a></button>
+      <div id="modal5" class="modal bottom-sheet">
+         <div class="modal-content">
+            <img src="/assets/img/codecubs.png" alt="cub" id="cubModal">
+            <ul class="collection">
+               {{#each adam}}
+              {{!--  {{#if github}}  --}}
+               <li class="collection-item avatar" style="height:160px">
+                  <img class="circle" id = "profile" src={{photo}} style="height:130px; width:130px">
+                  <span class="title">Cub Candidate in {{location}}</span>
+                  <p><br>{{name}}<br>
+                     {{email}}
+                  </p>
+                  <a href={{glink}}>Github Profile</a>
+                 {{!--  {{/if}} --}}
+                  {{/each}}
+                  <div class="logoWell">
+                     {{#each cubs}}
+                     {{#if true}} 
+                     <img src={{imgUrl}} style="width:40px">
+                     {{/if}}
+                     {{/each}}
+                  </div>
+               </li>
+            </ul>
+         </div>
+         <div class="modal-footer">
+            <a href="#modal5" id="exit" class="modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+         </div>
+      </div>
+      <script>
+        $(document).ready(function(){
+          $('#modal5').modal();
+          var techValueArr = [];
+          var techValue;
 
-        <div id="modal5" class="modal bottom-sheet">
-          <div class="modal-content">
- <img src="/assets/img/codecubs.png" alt="cub" id="cubModal">
- <ul class="collection">
- {{#each adam}}
+          $('#findIt').on('click', function(){
+            console.log("find it was clicked.");
 
-{{#if github}} 
 
-  <li class="collection-item avatar" style="height:160px">
-          <img class="circle" id = "profile" src={{photo}} style="height:130px; width:130px">
-      <span class="title">Cub Candidate in {{location}}</span>
-      <p><br>{{name}}<br>
-         {{email}}
-      </p>
-      <a href={{glink}}>Github Profile</a>
-      {{/if}}
-       {{/each}}
-       
-<div class="logoWell">
-     {{#each cubs}}
-      {{#if true}} 
-      <img src={{imgUrl}} style="width:40px">
- 
- {{/if}}
+            $( "li" ).each(function( index ) {
+  console.log( index + ": " + $( this ).text() );
+});
+            
+            // techValue = $('.skilledList').children().data('tech');
+            techValue = $(".skilledList").find("tech").value().trim();
+            techValueArr.push(techValue);
+            console.log("tech value was pushed");
 
- {{/each}}
- </div>
- </li>
-           </ul>
-          </div>
-               <div class="modal-footer">
-      <a href="#modal5" id="exit" class="modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
-    </div>
-
-        </div>
-              <script>
-              $(document).ready(function(){
-   $('#modal5').modal();
-   });
-     
+            console.log(techValue);
+            console.log(techValueArr);
+          });
+        });
+         
       </script>
-  
-  
-
-</body>
-</html> 
+   </body>
+</html>
