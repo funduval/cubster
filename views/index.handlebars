@@ -23,7 +23,7 @@
 
 
 <div id="made">
-<h4>Build the Tech Stack Your Organization Needs: <i class="material-icons large">arrow_forward</i></h4>
+<h4>Build the Tech Stack Your Organization Needs:</h4> <i class="material-icons large" id="arrow">arrow_forward</i>
 
 
 <ul class= "left" style="list-style:none">
@@ -32,7 +32,7 @@
 
 {{#unless this.skilled}}
 
-<li>
+<li class="forLogos">
 
 {{this.techName}}<br>
 <img class="logos" src={{this.imgUrl}}><br>
@@ -57,7 +57,7 @@
 
 {{#if this.skilled}}
 
-<li>
+<li class="forLogos">
 {{this.techName}}<br>
 
 <img class="logos" src={{this.imgUrl}}><br>

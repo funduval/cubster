@@ -8,6 +8,12 @@ body{
 	position: relative;
 
 }
+#arrow{
+
+	position: absolute;
+	top:30px;
+	left:560px;
+}
 
 li{
 
@@ -72,10 +78,10 @@ h1 {
 	background-repeat:no-repeat;
 	background-position: center;
 	text-align:center;
-	padding-top:84px;
+	padding-top:88px;
 	position:absolute;
-	top:580px;
-	left:535px;
+	top:570px;
+	left:550px;
 	z-index: 2;
 }
 
@@ -87,18 +93,27 @@ h2{
 	background-color: white;
 }
 
+.forLogos{
+
+	width:90px;
+}
+
 .right{
-	margin-right: 120px;
+	margin-right: 160px;
+
+
 }
 
 .left{
-	margin-left: 80px;
+	margin-left: 160px;
 }
+
+
 
 #made {
 	display: inline;
 	float: left;
-	margin-left: 2%;
+	margin-left: 1%;
 	width:400px;
 
 }
@@ -129,7 +144,7 @@ h2{
 	width: 150px;
 	height:80px;
 	top:480px;
-	left:520px;
+	left:540px;
 	text-align: justify;
 	padding:4px;
 	font-size: 18px;
@@ -158,6 +173,9 @@ li{
 }
 
 #cubLogo {
+	position:absolute;
+	top:130px;
+	left:450px;
 	width:300px;
 	display:inline;
 	float:left;
