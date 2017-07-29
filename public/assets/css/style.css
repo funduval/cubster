@@ -11,8 +11,15 @@ body{
 #arrow{
 
 	position: absolute;
-	top:30px;
+	top:350px;
 	left:560px;
+}
+
+.numOne{
+font-size: 20px;
+top:280px;
+	left:560px;
+
 }
 
 li{
@@ -30,14 +37,16 @@ button {
 
 .addIt{
 width:60px;
-font-size: 8px;
-line-height: 10px;
+font-size: 12px;
+line-height: 14px;
+margin-top: 0px;
 }
 
 .removeIt{
 width:60px;
-font-size: 8px;
-line-height: 10px;
+font-size: 12px;
+line-height: 14px;
+margin-top: 0px;
 
 
 }
@@ -48,6 +57,9 @@ line-height: 10px;
 
 .logos{
 width:60px;
+margin-bottom: 0px;
+padding-bottom: 0px;
+background-color: white;
 
 }
 #cubName{
@@ -55,8 +67,6 @@ display: inline;
 float: left;
 
 }
-
-
 
 h1 {
 
@@ -84,6 +94,9 @@ h1 {
 	left:550px;
 	z-index: 2;
 }
+#modal5{
+	min-height: 500px;
+}
 
 
 h2{
@@ -106,6 +119,17 @@ h2{
 
 .left{
 	margin-left: 160px;
+
+}
+
+.collection{
+
+	margin-left:30%;
+	float:left;
+}
+#exit{
+
+	float:left;
 }
 
 
@@ -115,6 +139,7 @@ h2{
 	float: left;
 	margin-left: 1%;
 	width:400px;
+	
 
 }
 
@@ -123,6 +148,7 @@ h2{
 	width:400px;
 	display: inline;
 	float: right;
+	
 	
 }
 
@@ -153,7 +179,7 @@ h2{
 
 li{
 
-	width:600px;
+	width:900px;
 }
 
 .profile{
@@ -162,9 +188,15 @@ li{
 	float:left;
 }
 
+#cubModal{
+
+	float:left;
+	width:250px;
+}
+
 #techName{
 	
-	margin:auto;er
+	margin:auto;
 	line-height:30px;
 	font-size:20px;
 	width:100px;
@@ -172,9 +204,10 @@ li{
 
 }
 
+
 #cubLogo {
 	position:absolute;
-	top:130px;
+	top:20px;
 	left:450px;
 	width:300px;
 	display:inline;
