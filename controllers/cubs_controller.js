@@ -27,6 +27,17 @@ router.get('/cubs', function(req,res){
 	});	
 });
 
+router.get('/cubs/partials', function(req,res){
+	console.log("Hitting cub partials route")
+	cub.all(function(cubData){
+		adam.all(function(adamData) {
+			var hbsObject = { cubs: cubData, adam: adamData };
+			console.log(hbsObject);
+			res.render('partials', hbsObject);
+		});
+	});	
+});
+
 //router.post('/cub/create', function (req, res) {
 //   cub.insertOne(req.body.cub_name, function() {
 //     res.redirect('/index');

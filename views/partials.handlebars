@@ -1,13 +1,7 @@
-<div class="well">{{#each cubs}}
- {{#if true}}
- <li>
- <img src="{{imgUrl}}" style="width:60px">
- </li>
- </div>
- {{/if}}
- {{/each}}
-   
- </li>
- {{/if}}
-
- {{/each}}
+ {{#each cubs}}
+                     {{#if this.skilled}} 
+                     
+                     <img src={{imgUrl}} style="width:40px">
+                   
+                     {{/if}}
+                     {{/each}}

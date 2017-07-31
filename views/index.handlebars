@@ -53,8 +53,8 @@
             {{/each}}
          </ul>
       </div>
-      <div id="find">
-      </div>
+            <div id="find">
+            </div>
       </div>
       <button class="btn waves-effect waves-light" type="submit" name="action" id="findIt">Submit Stack
       </button>
@@ -64,23 +64,25 @@
             <img src="/assets/img/codecubs.png" alt="cub" id="cubModal">
             <ul class="collection">
                {{#each adam}}
-              {{!--  {{#if github}}  --}}
-               <li class="collection-item avatar" style="height:160px">
+            <li class="collection-item avatar" id="avatar" style="height:190px">
+               <div id="movie"><iframe src="https://player.vimeo.com/video/227762863" width="200" height="160" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
                   <img class="circle" id = "profile" src={{photo}} style="height:130px; width:130px">
+
                   <span class="title">Cub Candidate in {{location}}</span>
                   <p><br>{{name}}<br>
                      {{email}}
                   </p>
-                  <a href={{glink}}>Github Profile</a>
-                 {{!--  {{/if}} --}}
-                  {{/each}}
-                  <div class="logoWell">
-                     {{#each cubs}}
-                     {{#if true}} 
-                     <img src={{imgUrl}} style="width:40px">
-                     {{/if}}
-                     {{/each}}
-                  </div>
+                   <br>
+                  <a href={{glink}} style="clear: left">Github Profile</a>
+                   {{#if relocate}}
+                  <h6 style="color:blue" style="clear: left"><em>{{name}} is willing to relocate</em></h6>
+                  {{/if}}
+
+                  {{#unless relocate}}
+                   <h6 style="color:red" style="clear: left"><em>{{name}} would prefer not to relocate</em></h6>
+                   {{/unless}}
+      
+           {{/each}}
                </li>
             </ul>
          </div>
@@ -88,30 +90,32 @@
             <a href="#modal5" id="exit" class="modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
          </div>
       </div>
-      <script>
+
+       <script>
         $(document).ready(function(){
           $('#modal5').modal();
-          var techValueArr = [];
-          var techValue;
+      //     var techValueArr = [];
+      //     var techValue;
 
-          $('#findIt').on('click', function(){
-            console.log("find it was clicked.");
+      //     $('#addIt').on('click', function(techValueArr,techValue){
+      //       console.log("find it was clicked.");
 
 
-            $( "li" ).each(function( index ) {
-  console.log( index + ": " + $( this ).text() );
-});
-            
-            // techValue = $('.skilledList').children().data('tech');
-            techValue = $(".skilledList").find("tech").value().trim();
-            techValueArr.push(techValue);
-            console.log("tech value was pushed");
+      //       // $( "li" ).each(function( index ) {
+      //       //   console.log( index + ": " + $( this ).text() );
+      //       // });
+                        
+      //       techValue = $('.skilledList').children().data('tech');
+      //       // techValue = $(".skilledList").find("tech").value().trim();
+      //       techValueArr.push(techValue);
+      //       console.log("tech value was pushed");
 
-            console.log(techValue);
-            console.log(techValueArr);
-          });
+      //       console.log(techValue);
+      //       console.log(techValueArr);
+      //     });
+          
         });
          
-      </script>
+      // </script>
    </body>
 </html>

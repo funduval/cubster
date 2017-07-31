@@ -8,6 +8,18 @@ body{
 	position: relative;
 
 }
+#avatar {
+
+	border-style: solid;
+	border-width: 2px;
+	border-color: lightgrey;
+
+
+}
+#movie{
+display: inline;
+float:right;
+}
 #arrow{
 
 	position: absolute;
