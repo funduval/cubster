@@ -5,3 +5,12 @@ INSERT INTO techstack (techName, skilled, imgUrl) VALUES ('node', true, 'https:/
 INSERT INTO techstack (techName, skilled, imgUrl) VALUES ('github', true,'https://funduval.files.wordpress.com/2017/07/github.png');
 INSERT INTO techstack (techName, skilled, imgUrl) VALUES ('mysql', true,'https://funduval.files.wordpress.com/2017/07/logo-mysql-170x170.png');
 
+
+
+update  cubInfo
+set     video = "https://player.vimeo.com/video/227762863"
+where   name = 'The' and LAST_NAME = 'Dude'
+
+update  cubInfo
+set     ORDER_PRICE = 4.2
+where   FIRST_NAME = 'Big' and LAST_NAME = 'Lebowsky'
