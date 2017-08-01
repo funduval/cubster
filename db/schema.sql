@@ -15,3 +15,7 @@ imgUrl varchar(260) NOT NULL,
 PRIMARY KEY (id)
 
 );
+
+
+ALTER TABLE cubInfo
+ADD video varchar(255) 
