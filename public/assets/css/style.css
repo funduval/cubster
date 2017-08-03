@@ -107,8 +107,12 @@ h1 {
 
 #seeTop{
 	line-height: 60px;
-	background-color: white;
+	background-color: transparent;
 	width:100%;
+}
+
+#knows{
+	color:black;
 }
 
 #trigger2 {
