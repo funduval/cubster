@@ -1,116 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <title>Code Cubs</title>
-      <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script> 
-      <!-- Compiled and minified JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-         
-   </head>
-   <body>
-      <!-- map and results -->
-      <div id="wrapper">
-         <div class="row">
-            <div class="col s12">
+
+
+  <div class="container" id="container">
+
+
+<div class="row" id="image">
+  <div class="col l12"> <img src="/assets/img/codecubsV2.png" alt="cub" id="cubLogo"></div>
+</div>
+
+<div class="row">
+    <div  id="made">
+        <div class="col s12 l6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Build the Tech Stack Your Organization Needs:</span>
+              <ul class="left" style="list-style:none">
+          {{#each cubs}} {{#unless this.skilled}}
+          <li class="forLogos">
+            <img class="logos" src={{this.imgUrl}}><br>
+            {{this.techName}}<br>
+            <form action='cubs/update/{{this.id}}?_method=PUT' method="POST"><input type="hidden" name="skilled" value="true">
+              <button  type="submit" class="addIt waves-effect waves-light btn">Add</button>
+            </form>
+          </li>
+          {{/unless}} {{/each}}
+        </ul>
             </div>
-         </div>
+          </div>
+        </div>
       </div>
-      <div id="made">
-         <h4>Build the Tech Stack Your Organization Needs:</h4>
-         <i class="material-icons large" id="arrow">arrow_forward</i>
-         <ul class= "left" style="list-style:none">
-            {{#each cubs}}
-            {{#unless this.skilled}}
-            <li class="forLogos">
-               {{this.techName}}<br>
-               <img class="logos" src={{this.imgUrl}}><br>
-               <form action = 'cubs/update/{{this.id}}?_method=PUT' method="POST"><input type="hidden" name="skilled" value="true">
-                  <button class = "addIt" type="submit">Add</button>
-               </form>
-            </li>
-            {{/unless}}
-            {{/each}}
-         </ul>
-      </div>
-      <div id = "image">
-         <img src="/assets/img/codecubs.png" alt="cub" id="cubLogo">
-      </div>
-      <div id = "skilled">
-         <h4>The Candidate I Seek Must Know:</h4>
-         <ul class = "right skilledList" style="list-style:none">
-            {{#each cubs}}
-            {{#if this.skilled}}
-            <script type="text/javascript">
 
-            var buildStack = {
-               chosen:[],
-               urls:[]
-            }
-
-            buildStack.chosen.push({{this.skilled}});
-            buildstack.urls.push({{this.imgUrl}});
-            console.log(buildStack.chosen)
-
-            </script>
-
-
+        <div id="skilled" >
+        <div class="col s12 l6 ">
+          <div class="card blue-grey darken-1"  >
+            <div class="card-content white-text" >
+              <span class="card-title">The Candidate I Seek Must Know:</span>
+               <ul class="right skilledList" style="list-style:none">
+            {{#each cubs}} {{#if this.skilled}}
             <li data-tech={{this.techName}} class="forLogos">
-               {{this.techName}}<br>
-               <img class="logos" src={{this.imgUrl}}><br>
-               <form action="cubs/update/{{this.id}}?_method=PUT" method="POST">
-                  <input type="hidden" name="skilled" value="false">
-                  <button type="submit" class="removeIt">Remove</button>
-               </form>
+              
+              <img class="logos" src={{this.imgUrl}}><br>
+              {{this.techName}}<br>
+              <form action="cubs/update/{{this.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="skilled" value="false">
+                <button type="submit" class="removeIt waves-effect waves-light btn">Remove</button>
+              </form>
             </li>
-            
-            {{/if}}
-            {{/each}}
-         </ul>
-
+            {{/if}} {{/each}}
+          </ul>
+            </div>
+            </div>
+          </div>
+       </div>
       </div>
-      <button class="btn waves-effect waves-light" type="submit" name="action" id="findIt">Submit Stack
-      </button>
-      <a class="btn modal-trigger waves-effect waves-light" href="#modal5" id="trigger">Find </a></button>
-      <div id="modal5" class="modal bottom-sheet">
-         <div class="modal-content">
-            <img src="/assets/img/codecubs.png" alt="cub" id="cubModal">
+
+  <div class="row">
+   <div  class="col  s12 l12">
+        {{!-- <i class="material-icons large" id="arrow">arrow_forward</i> --}}
+        <a class="btn-large orange darken-1 modal-trigger waves-effect waves-light" href="#modal5" >Find </a>
+      </div>
+    </div>
+    </div>
+        
+        {{!-----MODAL ----------------------------}} 
+
+        <div id="modal5" class="modal bottom-sheet col s11">
+        <div class="row" id="topRow">
+        
+    <div class="col m3">
+              <img src="/assets/img/codecubsV2.png" alt="cub" id="cubModal" style="width: 460px"> 
+    </div>
+
+    <div class="col l8">
+      <a class="btn modal-trigger waves-effect waves-light" href="#modal6" id="trigger2" >  <h6 id="seeTop">Click to see the top candidate </h6></a>
+    </div>
+</div> 
+          <div class="row" >
+      <div class="col l12">
+      <div class="modal-content">
+          
             <ul class="collection">
-               {{#each adam}}
-            <li class="collection-item avatar" id="avatar" style="height:190px">
-               <div id="movie"><iframe src={{video}} width="200" height="160" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
-                  <img class="circle" id = "profile" src={{photo}} style="height:130px; width:130px">
+              {{#each adam}}
+              <li class="collection-item avatar" id="avatar" style="height:190px">
+                <div id="movie">
+                  <iframe src={{video}} width="200" height="160" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+                <img class="circle" id="profile" src={{photo}} style="height:130px; width:130px">
 
-                  <span class="title">Cub Candidate in {{location}}</span>
-                  <p><br>{{name}}<br>
-                     {{email}}
-                  </p>
-                   <br>
-                  <a href={{glink}} style="clear: left">Github Profile</a>
-                   {{#if relocate}}
-                  <h6 style="color:blue" style="clear: left"><em>{{name}} is willing to relocate</em></h6>
-                  {{/if}}
+                <span class="title">Cub Candidate in {{location}}</span>
+                 {{#if relocate}}
+                <h6 style="color:blue" style="clear: left"><em>{{name}} is willing to relocate</em></h6>
+                {{/if}} 
+                {{#unless relocate}}
+                <h6 style="color:red" style="clear: left"><em>{{name}} would prefer not to relocate</em></h6>
+                {{/unless}}
+                <p id="contact"><br>{{name}}<br> {{email}}
+                </p>
+              
+                <br>
+                <a href={{glink}} style="clear: left">Github Profile</a> 
 
-                  {{#unless relocate}}
-                   <h6 style="color:red" style="clear: left"><em>{{name}} would prefer not to relocate</em></h6>
-                   {{/unless}}
-           {{/each}}
-               </li>
+                {{/each}}
+              </li>
             </ul>
+          </div>
+          
+            <a href="#modal5" id="exit" class="modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+          
+           <div id="modal6" class="modal bottom-sheet">
+         <div class="modal-content" id="secondModal">
+         <h3>Your top candidate knows  </h3>
+          {{#each cubs}}
+          {{#if skilled}}
+          <img class="logos" src={{this.imgUrl}}>
+          {{/if}}
+          {{/each}}
          </div>
          <div class="modal-footer">
-            <a href="#modal5" id="exit" class="modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+            <a href="#modal6" id="exit" class="modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
          </div>
-      </div>
 
-    <script type="text/javascript">
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <script type="text/javascript">
 
         $(document).ready(function(){
 
-          $('#modal5').modal();
+          $('#trigger').on('click', function(){
+            console.log("Trigger was clicked.");
+          });
 
-        });
-    
+
+          $('#trigger2').on('click', function(techList){
+                  console.log("Trigger was clicked.");
+                  $('#secondModal').append(techList)
+          }); 
+
+    //         $( ".skilledList" ).each(function( index, element) {
+
+    //           element -> ul
+           
+    //           const techList = [];
+
+    //           $(this).children().each(function (element) {
+    //             const technology = $(this).attr('data-tech');
+    //             techList.push(technology);
+
+    //           });
+    //                 console.log(techList);
+
+    // });
+          $('#modal5').modal();
+          $('#modal6').modal();
+
+  });
+ 
    </script>
-   </body>
-</html>
+
+    

@@ -8,7 +8,12 @@ const adam = require('../models/adam.js');
  // at Object.create (/Users/fundaistvan/cub/config/orm.js:51:14)
  //    at Object.create (/Users/fundaistvan/cub/models/cub.js:16:6)
  //    at /Users/fundaistvan/cub/controllers/cubs_controller.js:29:9
-
+  router.get("/api/cubs", function(req, res) {
+    db.Post.findAll({})
+    .then(function(dbcubs) {
+      res.json(dbcubs);
+    });
+  });
 
 router.get('/', function(req,res){
 
@@ -17,7 +22,7 @@ router.get('/', function(req,res){
 });
 
 router.get('/cubs', function(req,res){
-	console.log("Hitting cub get route")
+	console.log("In da cub")
 	cub.all(function(cubData){
 		adam.all(function(adamData) {
 			var hbsObject = { cubs: cubData, adam: adamData };

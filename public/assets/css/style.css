@@ -1,18 +1,260 @@
-body{
+#cf:before, #cf:after {
+    content: "";
+    display: table;
+}
 
-	background-color: #CFEBEA;
-/*background-color: white;
-*/	text-align: center;
+#cf:after {
+    clear: both;
+}
+
+#cf {
+    zoom: 1;
+}
+
+body {
+	background-color: #474747;
+	text-align: center;
 	font-family: sans-serif;
-	
 	position: relative;
+	color: #FFF;
+	padding:2em;
+}
+#contact{
+	color:black;
+}
 
+
+#image{
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+}
+#container {
+	width: 100%;
+}
+
+
+.numOne {
+	font-size: 20px;
+	top: 280px;
+	left: 560px;
+}
+
+ul:not(.browser-default) li {
+	display: inline-block;
+}
+.title{
+	color:black;
+}
+
+ul:not(.browser-default) {
+	margin: 0 auto;
+	text-align: center;
+}
+
+li {
+	width: 100px;
+	display: block;
+}
+
+button {
+	background-color: white;
+	color: black;
+	width: 60px;
+	padding: 2px;
+}
+
+.addIt {
+	width: 95%;
+}
+
+.removeIt {
+	width:95%;
+}
+
+.btn{
+	padding: 0;
+	margin-top: .5em;
+	width:100%;
+}
+.btn-large{
+	width:100%;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+/* .createIt{
+
+} */
+
+.logos {
+	width: 60px;
+	margin-bottom: 0px;
+	margin-top: 1em;
+	background-color: white;
+}
+
+#cubName {
+	display: inline;
+	float: left;
+}
+
+h1 {
+	line-height: 30px;
+	padding: 4px;
+	background-color: #389096;
+	color: white;
+}
+
+#seeTop{
+	line-height: 60px;
+	background-color: white;
+	width:100%;
+}
+
+#trigger2 {
+	
+	color: black;
+	
+
+	border-radius: 3px;
+
+	background-image: url("../img/cubFind.png");
+	
+	background-repeat: repeat;
+	background-position: right;
+	text-align: center;
+	padding:45px;
+	
+	margin-left: 80px;
+	background-color: white;
+	
+} 
+#topRow{
+	margin-top: 60px;
+}
+
+#cardSkills{
+	min-height:300px;
+}
+
+#modal5 {
+	min-height: 500px;
+	background-color: #474747;
+}
+
+h2 {
+	color: black;
+	background-color: white;
+}
+
+.card .forLogos {
+	width: 90px;
+}
+
+.right {
+	margin-right: 160px;
+	float:none !important;
+}
+
+.left {
+	margin-left: 160px;
+	float:none !important;
+}
+
+.collection {
+	margin-left: 30%;
+	float: left;
+}
+
+#exit {
+	float: left;
+}
+
+#made {
+	display: inline;
+	margin: 0 auto;
+	width: 100%;;
+}
+
+#skilled {
+	display: inline;
+    margin: 0 auto;
+    width: 100%;;
+}
+
+.logos {
+	width: 60px;
+}
+
+#find {
+	position: absolute;
+	bottom: -480px;
+	left: 20%;
+}
+
+#findIt {
+	position: absolute;
+	width: 150px;
+	height: 80px;
+	top: 480px;
+	left: 540px;
+	text-align: justify;
+	padding: 4px;
+	font-size: 18px;
+}
+
+li {
+	width: 900px;
+}
+
+.profile {
+	display: inline;
+	float: left;
+}
+
+
+
+#techName {
+	margin: auto;
+	line-height: 30px;
+	font-size: 20px;
+	width: 100px;
+}
+
+ #cubLogo {
+	width: 75%;
+	margin: 0 auto;
+} 
+
+#modal5{
+
+
+}
+#modal6{
+
+
+	
+}
+
+#cubModal{
+
+	float:left;
+	width:180px;
+	padding:0;
+}
+
+
+.profile{
+
+	display: inline;
+	float:left;
 }
 #avatar {
 
 	border-style: solid;
 	border-width: 2px;
 	border-color: lightgrey;
+	width:100%;
 
 
 }
@@ -20,119 +262,22 @@ body{
 display: inline;
 float:right;
 }
-#arrow{
 
-	position: absolute;
-	top:350px;
-	left:560px;
-}
 
 .numOne{
 font-size: 20px;
 top:280px;
-	left:560px;
+left:560px;
 
 }
 
-li{
 
-	width:100px;
-	display:block;
-}
-
-button {
-	background-color: white;
-	color: black;
-	width:60px;
-	padding:2px;
-}
-
-.addIt{
-width:60px;
-font-size: 12px;
-line-height: 14px;
-margin-top: 0px;
-}
-
-.removeIt{
-width:60px;
-font-size: 12px;
-line-height: 14px;
-margin-top: 0px;
-
-
-
-}
-
-.createIt{
-
-}
-
-.logos{
-width:60px;
-margin-bottom: 0px;
-background-color: white;
-
-}
-#cubName{
-display: inline;
-float: left;
-
-}
-
-h1 {
-
-	line-height: 30px;
-	padding:4px;
-	background-color: #389096;
-	color:white;
-}
-
-#trigger{
-	background-color: transparent;
-
-	color:black;
-	width: 130px;
-	height: 130px;
-	border-radius: 10px;
-	font-size: 16px;
-	background-image: url("../img/cubFind.png");
-	background-repeat:no-repeat;
-	background-position: center;
-	text-align:center;
-	padding-top:88px;
-	position:absolute;
-	top:570px;
-	left:550px;
-	z-index: 2;
-}
 #modal5{
 	min-height: 500px;
 }
 
 
-h2{
 
-
-	color: black;
-	background-color: white;
-}
-
-.forLogos{
-
-	width:90px;
-}
-
-.right{
-	margin-right: 160px;
-
-
-}
-
-.left{
-	margin-left: 160px;
-
-}
 
 .collection{
 
@@ -146,83 +291,12 @@ h2{
 
 
 
-#made {
-	display: inline;
-	float: left;
-	margin-left: 1%;
-	width:400px;
-	
-
-}
 
 
-#skilled {
-	width:400px;
-	display: inline;
-	float: right;
-	
-	
-}
 
 
-.logos{
-	width:60px;
-}
-
-#find {
-	position: absolute;
-	bottom: -480px;
-	left: 20%;
 
 
-}
-
-#findIt{
-	position:absolute;
-	width: 150px;
-	height:80px;
-	top:480px;
-	left:540px;
-	text-align: justify;
-	padding:4px;
-	font-size: 18px;
-	
-}
-
-li{
-
-	width:900px;
-}
-
-.profile{
-
-	display: inline;
-	float:left;
-}
-
-#cubModal{
-
-	float:left;
-	width:250px;
-}
-
-#techName{
-	
-	margin:auto;
-	line-height:30px;
-	font-size:20px;
-	width:100px;
-	
-
-}
 
 
-#cubLogo {
-	position:absolute;
-	top:20px;
-	left:450px;
-	width:300px;
-	display:inline;
-	float:left;
-	margin-left: 1%;
-}
+
