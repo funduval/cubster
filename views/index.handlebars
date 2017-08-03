@@ -126,7 +126,11 @@
 
       <script type="text/javascript">
 
-        $(document).ready(function(){
+        let techList;
+
+        $(document).ready(function(techList){
+
+          
 
           $('#trigger').on('click', function(){
             console.log("Trigger was clicked.");
@@ -138,20 +142,19 @@
                   $('#secondModal').append(techList)
           }); 
 
-    //         $( ".skilledList" ).each(function( index, element) {
-
-    //           element -> ul
+            $( ".skilledList" ).each(function( index, element) {
            
-    //           const techList = [];
+              techList = [];
 
-    //           $(this).children().each(function (element) {
-    //             const technology = $(this).attr('data-tech');
-    //             techList.push(technology);
+              $(this).children().each(function (element) {
+                const technology = $(this).attr('data-tech');
+                techList.push(technology);
 
-    //           });
-    //                 console.log(techList);
+              });
+              
+         console.log(techList);
 
-    // });
+    });
           $('#modal5').modal();
           $('#modal6').modal();
 
